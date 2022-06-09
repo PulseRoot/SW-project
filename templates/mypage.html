@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<style>
+    body{
+  padding: 0;
+  margin: 0;
+}
+div{
+  box-sizing: border-box;
+}
+
+
+/* 녹색 텍스트 */
+.green{
+  color: #24855b;
+}
+
+.wrap{
+  background-color: #F8F8F8;
+}
+/* 녹색배경 */
+.greenContainer{
+  height: 132px;
+  background-color: #24855b;
+
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.greenContainer .name{
+   font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.greenContainer .modify{
+  margin-left: auto;
+}
+
+
+/* 단골상점 , 상품후기 , 적립금 */
+.summaryContainer .item{
+  flex-grow: 1
+}
+/* 녹색 숫자 */
+.summaryContainer .number{
+  font-size: 19px;
+  font-weight: bold;
+  color: #24855b;
+}
+/* 텍스트 */
+.summaryContainer .item > div:nth-child(2){
+  font-size: 13px;
+}
+
+/* ================== 주문/배송조회 박스 시작 ==================== */
+.shippingStatusContainer{
+  padding: 21px 16px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+/* 주문/배송조회 타이틀 */
+.shippingStatusContainer .title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 장바구니 결제완료 배송중 구매확정 [로우] */
+.shippingStatusContainer .status{
+  display: flex;
+  justify-content:space-around;
+  margin-bottom: 21px;
+}
+/* 장바구니 결제완료 배송중 구매확정 [아이템]  */
+.shippingStatusContainer .item{
+  display: flex;
+}
+
+.shippingStatusContainer .number{
+  font-size: 31px;
+  font-weight: 500;
+  text-align: center;
+}
+.shippingStatusContainer .text{
+  font-size: 12px;
+  font-weight: normal;
+  color: #c2c2c2;
+  text-align: center;
+}
+.shippingStatusContainer .icon{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 16px;
+  height: 16px;
+}
+
+
+/*=================== 주문목록 ~ 찜한상품 리스트 ==================*/
+.listContainer{
+  padding: 0;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.listContainer .item{
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: black;
+  text-decoration: none;
+  height: 56px;
+  box-sizing: border-box;
+}
+.listContainer .icon{
+  margin-right: 14px;
+}
+.listContainer .text{
+  font-size: 16px;
+  position: relative;
+}
+.listContainer .right{
+  margin-left: auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
+.product-list {
+    padding: 20px 10px 20px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.product-list>ul {
+    margin: 0 -10px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.product-list>ul>li {
+    width: 25%;
+    padding: 10px;
+}
+.white-box {
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    padding: 35px 20px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+.wishlist-icon {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+.wishlist-icon img {
+    width: 20px;
+    height: 20px;
+}
+.product-img {
+    min-height: 135px;
+}
+.product-img img {
+    max-width: 100%;
+    max-height: 130px;
+    display: block;
+    margin: 0 auto;
+}
+.product-bottom {
+    text-align: center;
+}
+.product-name {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin: 10px 0 10px;
+    font-weight: 600;
+    max-height: 48px;
+    min-height: 48px;
+    overflow: hidden;
+}
+.price {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+.blue-btn {
+	background: #13cfdf;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    max-width: 132px;
+    margin: 10px auto 0;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.price .line-through {
+    font-size: 14px;
+    color: #999999;
+    font-weight: 400;
+    vertical-align: 1px;
+    display: inline-block;
+    text-decoration: line-through;
+    margin-left: 4px;
+}
+.col-md-3{
+    margin-bottom: 30px;
+}
+
+
+
+
+/*  */
+.listContainer .item:hover{
+/*   background-color: #f8f8f8; */
+}
+.infoContainer .item:hover{
+/*   background-color: #f8f8f8; */
+}
+    .insert {
+    padding: 20px 30px;
+    display: block;
+    width: 600px;
+    margin: 5vh auto;
+    height: 90vh;
+    border: 1px solid #dbdbdb;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.insert .file-list {
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #989898;
+    padding: 10px;
+}
+.insert .file-list .filebox p {
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.insert .file-list .filebox .delete i{
+    color: #ff5353;
+    margin-left: 5px;
+}
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">My Project</a>
+    </div>
+    <div class="navbar-collapse collapse" id="searchbar">
+
+
+      <ul class="nav navbar-nav navbar-right">
+         {%if userid%}
+        <li id="userPage">
+          <a href={{url_for('userinfo',username=userid)}}><i class="icon-user"></i> My Page</a>
+        </li>
+        <li><a onclick="window.location.href='/logout'" data-prevent="">Logout</a></li>
+          {%else%}
+           <li id="signIn">
+          <a onclick="window.location.href='/signin'"><i class="icon-user"></i> sign in</a>
+        </li>
+        <li><a onclick="window.location.href='/signup'" data-prevent="">sing up</a></li>
+          {%endif%}
+      </ul>
+
+
+
+
+     <form class="navbar-form" action="/" method="POST">
+        <div class="form-group" style="display:inline;">
+          <div class="input-group" style="display:table;">
+            <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+            <input class="form-control" name="search_key" placeholder="Search Here" autocomplete="off" autofocus="autofocus" type="text">
+          </div>
+        </div>
+      </form>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+<br>
+<div class="wrap">
+  <div class="greenContainer">
+    <div>
+      <div class="name">{{result.username}}
+          {%if followFlag==0%}
+          <a href="{{url_for('follow',username=result.username)}}">
+      <button type="button">팔로우</button>
+      </a>
+          {%elif followFlag==1%}
+          <a href="{{url_for('unfollow',username=result.username)}}">
+          <button type="button">팔로우 해제</button>
+          </a>
+          {%else%}
+          {%endif%}
+      </div>
+
+    </div>
+    <div class="modify"></div>
+  </div>
+
+  <div class="shippingStatusContainer">
+    <div class="title">
+      Follow
+    </div>
+    <div class="status">
+
+      <div class="item">
+        <div>
+            <a href={{url_for('following',username=result.username)}}>
+          <div class="green number">{{result.following|count}}</div>
+          <div class="text">팔로잉</div>
+            </a>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+            <a href={{url_for('follower',username=result.username)}}>
+          <div class="number">{{result.follower|count}}</div>
+          <div class="text">팔로워</div>
+            </a>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+   <div class="listContainer" style="margin-left:10px">
+
+        <div class="icon">ii</div>
+        <div class="text">상품목록     </div>
+        <div class="right">> </div>
+
+
+
+  </div>
+
+</div>
+<div class="container">
+    <div class="product-list">
+      <div class="row">
+
+          {% for i in data %}
+
+        <div class="col-md-3 col-sm-6">
+          <div class="white-box">
+            <a href="http://127.0.0.1:9999/detail/{{i._id}}">
+            <div class="product-img">
+              <img width="300px" height="400px" src="data:image/png;base64, {{img[loop.index-1]}}">
+            </div>
+            <div class="product-bottom">
+              <div class="product-name">{{i.title}}</div>
+              <div class="price">
+                <span class="rupee-icon">\</span> {{i.price}} 원
+              </div>
+              <a  class="blue-btn" style="{{i.sold}}">sold out</a>
+            </div>
+                </a>
+          </div>
+        </div>
+
+          {% endfor %}
+      </div>
+    </div>
+</div>
+</body>
+</html>
